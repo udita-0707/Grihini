@@ -3,14 +3,13 @@ const prisma = new PrismaClient();
 
 // Create a new user
 exports.createUser = async (req, res) => {
-  const { name, email, password, role } = req.body;
+  const { name, email, password } = req.body;
   try {
     const newUser = await prisma.user.create({
       data: {
         name,
         email,
         password,
-        role,
       },
     });
     res.status(201).json(newUser);

@@ -7,10 +7,6 @@ const app = express();
 app.use(express.json());
 
 const authRoutes = require('./routes/auth');
-const courseRoutes = require('./routes/courses');
-const jobRoutes = require('./routes/jobs');
-const productRoutes = require('./routes/products');
-const transactionRoutes = require('./routes/transactions');
 const userRoutes = require('./routes/user');
 
 
@@ -20,20 +16,8 @@ app.use('/api/v1/users', userRoutes);
 // Authentication routes
 app.use('/api/v1/auth', authRoutes);
 
-// Courses
-app.use('/api/v1/courses', courseRoutes);
-
-// Jobs
-app.use('/api/v1/jobs', jobRoutes);
-
-// Products
-app.use('/api/v1/products', productRoutes);
-
-// Transactions
-app.use('/api/v1/transactions', transactionRoutes);
-
 app.use('/', (req, res) => {
-  res.send('This is the Backend API Testing Project');
+  res.send('This is the Backend API Project');
 });
 
 app.use('*', (req, res) => {

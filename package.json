@@ -4,19 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run prisma:generate && node index.js",
+    "start": "node index.js",
     "devStart": "nodemon src/index.js",
-    "prisma:generate": "prisma generate --schema=./models/schema.prisma"
+    "migrate": "prisma migrate dev --name init"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^3.1.7",
-    "prisma": "^5.20.0"
+    "prisma": "^5.22.0"
   },
   "dependencies": {
-    "@prisma/client": "^5.20.0",
+    "@prisma/client": "^5.22.0",
     "axios": "^1.7.7",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
