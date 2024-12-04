@@ -11,10 +11,11 @@ const courseRoutes = require('./routes/courses');
 const jobRoutes = require('./routes/jobs');
 const productRoutes = require('./routes/products');
 const transactionRoutes = require('./routes/transactions');
+const userRoutes = require('./routes/user');
 
-// app.use('/', (req, res) => {
-//   res.send('This is the Backend API Testing Project');
-// });
+
+//User routes
+app.use('/api/v1/users', userRoutes);
 
 // Authentication routes
 app.use('/api/v1/auth', authRoutes);
@@ -30,6 +31,10 @@ app.use('/api/v1/products', productRoutes);
 
 // Transactions
 app.use('/api/v1/transactions', transactionRoutes);
+
+app.use('/', (req, res) => {
+  res.send('This is the Backend API Testing Project');
+});
 
 app.use('*', (req, res) => {
   res.status(404).send('404 Not Found');
